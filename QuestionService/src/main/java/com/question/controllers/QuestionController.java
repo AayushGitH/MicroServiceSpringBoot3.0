@@ -37,4 +37,9 @@ public class QuestionController {
 	private ResponseEntity<List<Question>> getQuestion() {
 		return ResponseEntity.status(HttpStatus.OK).body(this.questionService.getQuestions());
 	}
+	
+	@GetMapping("/quiz/{quizId}")
+	private ResponseEntity<List<Question>> getQuestionByQuizId(@PathVariable Long quizId) {
+		return ResponseEntity.status(HttpStatus.OK).body(this.questionService.getQuestionByQuizId(quizId));
+	}
 }
